@@ -1,0 +1,35 @@
+extends ../common-layout/common 
+
+block content
+    .header
+        h3.text-center.mt-4 WEATHER STATION
+    
+    .d-flex.justify-content-center.align-items-center.mt-5
+        form(action="/user/weather", method="get")
+            label.mr-3(for="city") 
+                b City
+            input#city.mr-3(type="text", name="city", placeholder="Type in the city...")
+            button.btn.btn-primary Check
+    br
+
+    if err
+        .alert.alert-danger #{err}
+
+    .table-weather
+        table.table.text-center
+            tr
+                th City
+                th Weather
+                th Description 
+                th Visibility
+                th Temparature
+                th Wind Speed
+            tr
+                td  #{city}    
+                if imgSrc
+                    td 
+                        img(src= imgSrc, alt="logo", width="70rem", height="70rem")           
+                td #{description}
+                td #{visibility} 
+                td #{temp} 
+                td #{windSpeed} 

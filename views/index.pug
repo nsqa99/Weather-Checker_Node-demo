@@ -1,0 +1,29 @@
+extends ./common-layout/common
+
+block content
+
+        
+        .text-center
+            h1.mt-4 Weather Checker v1.0
+            br
+        .d-flex.flex-wrap.justify-content-around.align-items-center.mt-4
+            img(src="login-image.jpg")
+            
+            form(action="/login",method="post")
+                if err
+                    .alert.alert-danger #{err}
+                label(for="email") 
+                    b Email
+                input#email.form-control(type="email", name="email", value= email || "")
+                br
+                label(for="password") 
+                    b Password
+                input#password.form-control(type="password", name="password")
+                button.mt-3.btn.btn-primary Login
+            
+        .d-flex.mt-3.flex-column.align-items-end.mr-4
+            h3 Don't have an account yet? 
+            h4 
+                a(href="/user/signup") Sign up
+
+

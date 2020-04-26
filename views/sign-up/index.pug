@@ -1,0 +1,20 @@
+extends ../common-layout/common 
+
+block content
+    .h2 CREATE ACCOUNT
+    form.m-3(action="/user/signup", method="post")
+        label(for="email") 
+            b Email
+        .form-group
+        input#email.form-control(type="email", name="email")
+        br
+        label(for="password") 
+            b Password
+        .form-group
+        input#password.form-control(type="password", name="password")
+        br
+        label(for="password") 
+            b Refill Password
+        .form-group
+        input#password.form-control(type="password", name="check-password")
+        button.mt-3.btn.btn-primary Sign up
