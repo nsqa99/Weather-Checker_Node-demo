@@ -1,15 +1,15 @@
-const users = [
+const users = 
     {
         email: 'nguyensyquanganh@gmail.com',
-        password: '12022020'
-    }
-];
+        password: '12022020',
+        status: 'verified'
+    };
 
 
 module.exports.postLogin = (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
-    if (email === users[0].email && password === users[0].password) {
+    if (email === users.email && password === users.password) {
         next();
     } else {
         const error = 'Wrong email address or password';
@@ -18,4 +18,5 @@ module.exports.postLogin = (req, res, next) => {
             email: email
         })
     }
+
 }
