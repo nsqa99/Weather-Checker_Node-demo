@@ -6,6 +6,8 @@ block content
         .text-center
             h1.mt-4 Weather Checker v1.0
             br
+        if error
+            .alert.alert-danger #{error}
         .d-flex.flex-wrap.justify-content-around.align-items-center.mt-4
             img(src="login-image.jpg")
             

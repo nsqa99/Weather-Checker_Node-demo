@@ -6,7 +6,7 @@ block content
         label(for="email") 
             b Email
         .form-group
-        input#email.form-control(type="email", name="email")
+        input#email.form-control(type="email", name="email", value= userEmail || "")
         br
         label(for="password") 
             b Password
@@ -16,5 +16,5 @@ block content
         label(for="password") 
             b Refill Password
         .form-group
-        input#password.form-control(type="password", name="check-password")
+        input#password.form-control(type="password", name="rePassword")
         button.mt-3.btn.btn-primary Sign up

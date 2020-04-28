@@ -8,7 +8,7 @@ block content
         form(action="/user/weather", method="get")
             label.mr-3(for="city") 
                 b City
-            input#city.mr-3(type="text", name="city", placeholder="Type in the city...")
+            input#city.mr-3(type="text", name="city", placeholder="Type in the city...", value= city || errCity || "")
             button.btn.btn-primary Check
     br
 
@@ -25,7 +25,7 @@ block content
                 th Temparature
                 th Wind Speed
             tr
-                td  #{city}    
+                td  #{city}  
                 if imgSrc
                     td 
                         img(src= imgSrc, alt="logo", width="70rem", height="70rem")           
