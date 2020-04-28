@@ -27,7 +27,8 @@ module.exports.getWeather = (req, res) => {
             })
         } else {
             res.render('../views/home/index', {
-                err: err
+                err: err,
+                errCity: city
             })
         }
      })
