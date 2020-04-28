@@ -14,13 +14,7 @@ module.exports.getSignup = (req, res) => {
 module.exports.postSignup = async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    const rePassword = req.body.rePassword;
-    res.locals.userEmail = email;
-    if (rePassword !== password) {
-        const error = 'Please type in the password correctly!';
-        res.render('sign-up/index');
-        return;
-    }
+    
 
     let signer = new User({
         email: email,

@@ -3,6 +3,8 @@ extends ../common-layout/common
 block content
     .h2 CREATE ACCOUNT
     form.m-3(action="/user/signup", method="post")
+        if err
+            .alert.alert-danger #{err}
         label(for="email") 
             b Email
         .form-group
