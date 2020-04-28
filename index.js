@@ -5,8 +5,12 @@ const routeLogin = require('./routes/login.route');
 const cookieParser = require('cookie-parser');
 const secretGenerator = require('./secretString/secret.generate');
 
+const mongoose = require('mongoose');
 
 require('dotenv').config();
+
+mongoose.connect('mongodb://localhost:27017/test', {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+
 const app = express();
 
 app.set('view engine', 'pug');
@@ -24,7 +28,7 @@ app.get('/', (req, res) => {
         res.render('index');
         return;
     }
-    res.render('./home/index');
+    res.redirect('/user/home');
 });
 
 app.use('/user', routeUser);
